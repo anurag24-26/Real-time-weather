@@ -13,7 +13,7 @@ function App() {
     setError("");
     try {
       const response = await axios.get(
-        `http://localhost:5000/weather?city=${city}`
+        `https://real-time-weather-vlv6.onrender.com/weather?city=${city}`
       );
       setWeatherData(response.data);
     } catch (err) {
