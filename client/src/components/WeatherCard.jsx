@@ -5,7 +5,7 @@ const WeatherCard = ({ weatherData }) => {
 
   const {
     temperature,
-    weather,
+    description,
     icon,
     humidity,
     windSpeed,
@@ -18,11 +18,13 @@ const WeatherCard = ({ weatherData }) => {
       <h2>
         {city}, {country}
       </h2>
-      <img
-        src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
-        alt="weather icon"
-      />
-      <p>{weather?.description}</p>
+      {icon && (
+        <img
+          src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
+          alt="weather icon"
+        />
+      )}
+      <p>{description}</p>
       <p>Temperature: {temperature}°C</p>
       <p>Humidity: {humidity}%</p>
       <p>Wind Speed: {windSpeed} m/s</p>
