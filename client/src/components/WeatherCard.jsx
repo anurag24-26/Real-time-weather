@@ -3,8 +3,15 @@ import React from "react";
 const WeatherCard = ({ weatherData }) => {
   if (!weatherData) return null;
 
-  const { temperature, weather, icon, humidity, windSpeed, city, country } =
-    weatherData;
+  const {
+    temperature,
+    weather,
+    icon,
+    humidity,
+    windSpeed,
+    city,
+    country,
+  } = weatherData;
 
   return (
     <div className="weather-card">
@@ -12,10 +19,10 @@ const WeatherCard = ({ weatherData }) => {
         {city}, {country}
       </h2>
       <img
-        src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
+        src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
         alt="weather icon"
       />
-      <p>{weather}</p>
+      <p>{weather?.description}</p>
       <p>Temperature: {temperature}°C</p>
       <p>Humidity: {humidity}%</p>
       <p>Wind Speed: {windSpeed} m/s</p>
